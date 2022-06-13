@@ -1,0 +1,167 @@
+.header {
+    height: 105px;
+    width: 100%;
+    top: 0;
+    justify-content: center;
+}
+
+.color-1{
+    height: 70px;
+    background-color: #ffd146;
+    align-items: center;
+}
+
+.padre {
+    display: flex;
+    padding: 0px 15%;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 1200px;
+    height: 70px;
+}
+
+.btn-logo {
+    text-decoration: none;
+    display: flex;
+}
+
+
+.tamaño-logo {
+    width: 100px;
+    height: 28px;
+}
+
+@media (min-width:550px) {
+.tamaño-logo {
+    width: 141px;
+    height: 40px;
+}
+}
+
+.logo-div {
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.color-2{
+    height: 45px;
+    background-color: #121738;
+    align-items: center;
+}
+
+.madre {
+    height: 45px;
+    display: flex;
+    padding: 0px 15%;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 1200px;
+    height: 45px;
+}
+
+.txt-opciones {
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+}
+
+.usuario-opciones {
+    margin: 0 auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.div-usuario {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 15px;
+    border: 1px solid white;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.txt-usuario {
+    margin: auto 0;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*////////////////////////CARRITO/////////////////////*/
+
+header li{
+    list-style: none;
+    margin: 0 10px;
+  }
+  
+  header ul{
+    display: flex;
+    margin: 0 50px 0 200px;
+  }
+  
+  header .cart {
+    cursor: pointer;
+    width: 40px;
+    margin-left: 25px;
+  }
+  
+  header .item_total{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+
+  /*//////////////////SEARCH BOX/////////////////////////*/
+
+.div-search {
+      height: auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+}
+
+.boton-search {
+    text-decoration: none;
+    background: none;
+    border: none;
+    margin: auto 0;
+    cursor: pointer;
+    width: 40px;
+    height: 32px;
+    border-left: 1px solid grey;
+}
+
+.input-search {
+    width: 90%;
+    outline: none;
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: grey;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    height: 35px;
+    padding: 0 5px 0 15px;
+}
+
+.contenedor-search {
+    background-color: white;
+    width: 600px;
+    height: 37px;
+    margin-right: auto;
+    border-radius: 5px;
+    display: flex;
+}
