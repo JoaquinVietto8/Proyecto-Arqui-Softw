@@ -18,7 +18,7 @@ export const Categorias = () => {
     <>
       <main>
         <div class="contenedor-categorias">
-        <h1 class="title"> Categorias</h1>
+        <h1 class="title-categorias"> Categorias</h1>
           {
             categorias.map(categoria => (
               <ObjectCategorias key={categoria.id}

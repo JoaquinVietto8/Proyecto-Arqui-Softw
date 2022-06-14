@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+main {
+    flex-wrap: wrap;
+    display: flex;
+    margin: 25px 10%;
+    padding-bottom: 138px;
+    justify-content: center;
+}
+
+body {
+    background-color: rgb(235, 233, 233);
+}
+
+.wrapper {
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}

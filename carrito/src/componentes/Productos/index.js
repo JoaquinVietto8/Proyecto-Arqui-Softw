@@ -17,9 +17,8 @@ export const Productos = () => {
   return (
     <>
       <main>
-        
         <div class="contenedor-productos">
-        <h1 class="title"> Nuestros productos</h1>
+        <h1 class="title-productos"> Nuestros productos</h1>
           {
             productos.map(producto => (
               <ObjectProductos key={producto.id}
