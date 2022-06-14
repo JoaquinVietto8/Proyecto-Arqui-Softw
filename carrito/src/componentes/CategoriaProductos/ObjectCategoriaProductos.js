@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ObjectProductos = (
+export const ObjectCategoriaProductos = (
     { id,
         name,
         picture,
@@ -20,7 +20,7 @@ export const ObjectProductos = (
 
                 <p class="precio">${price}</p>
                 <div class="datos-hijo">
-                    <a href="http://localhost:8080/products/" class="boton">
+                    <a href="localhost:3000/products/" class="boton">
                         <div class="div-boton">
                             Ver producto
                         </div>

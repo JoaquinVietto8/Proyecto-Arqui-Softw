@@ -23,10 +23,10 @@ export const Productos = () => {
           {
             productos.map(producto => (
               <ObjectProductos key={producto.id}
-                id={producto.id_producto}
+                id={producto.id_product}
                 name={producto.name}
                 price={producto.price}
-                icon={producto.icon}
+                picture={producto.picture_url}
                 stock={producto.stock}
                 id_category={producto.id_category}
               />

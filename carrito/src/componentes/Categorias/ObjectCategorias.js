@@ -16,7 +16,7 @@ export const ObjectCategorias = (
         cantidad,
     }) => {
     return (
-        <a href={`http://localhost:8080/categorias/${name}`} class="boton">
+        <a href={`localhost:3000/categorias/${name}`} class="boton-categoria">
             <div class="contenido-boton" id={name} onMouseOver={() => BotonIn({name})} onMouseOut={() => BotonOut({name})}>
                 <div class="div-icon">
                     <img class="icono-categoria" src={icon} />

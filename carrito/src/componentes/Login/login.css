@@ -1,0 +1,57 @@
+.contenedor-login{
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 30px;
+    margin-top: 30px;
+}
+
+.title-login {
+    font-size: 40px;
+    color: #121738;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.input-datos{
+    width: 270px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    padding-left: 8px;
+    outline: none;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.div-input{
+    margin: 0 0 15px 0;
+}
+
+.div-confirmar {
+    display: flex;
+    margin-top: 40px;
+}
+
+.confirmar {
+    background-color: #facc41;
+    color: black;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    font-size: 17px;
+    width: 284px;
+    height: 37px;
+    font-family: 'Noto Sans JP', sans-serif;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+.confirmar:hover {
+    transition: 0.3s;
+    background-color: #f0b60a;
+}
+

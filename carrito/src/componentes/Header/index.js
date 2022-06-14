@@ -9,7 +9,7 @@ export const Header = () => {
         <div class="padre">
 
           <div class="logo-div">
-            <a class="btn-logo" href="">
+            <a class="btn-logo" href='http://localhost:3000/'>
               <img class="tamaño-logo" src={Tiveo} />
             </a>
           </div>
@@ -34,15 +34,15 @@ export const Header = () => {
         <div class="madre">
 
           <div class="opciones flex">
-            <a id="productos" class="txt-opciones">
+            <a id="productos" class="txt-opciones" href='http://localhost:3000/'>
               Inicio
             </a>
-            <a id="categorias" class="txt-opciones">
+            <a id="categorias" class="txt-opciones" href='http://localhost:3000/categorias'>
               Categorias
             </a>
           </div>
           <div class="usuario">
-            <a class="usuario-opciones" href="">
+            <a class="usuario-opciones" href='http://localhost:3000/login'>
               <div class="div-usuario">
                 <p class="txt-usuario">Iniciar Sesion</p>
               </div>
@@ -50,6 +50,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-    </header>
+    </header >
   )
 }

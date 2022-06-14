@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ObjectProductos } from "./ObjectProductos";
+import { ObjectCategoriaProductos } from "./ObjectCategoriaProductos";
 import './productos.css';
 
-export const Productos = () => {
+export const CategeoriaProductos = () => {
 
   const [productos, setProductos] = useState([])
   const fetchApi = async () => {
-    const response = await fetch('http://localhost:8080/categorias/notebooks')
+    const response = await fetch('http://localhost:8080/categorias/:name')
       .then((response) => response.json())
     setProductos(response)
     console.log(response);
@@ -22,7 +22,7 @@ export const Productos = () => {
         <h1 class="title"> Notebooks</h1>
           {
             productos.map(producto => (
-              <ObjectProductos key={producto.id}
+              <ObjectCategoriaProductos key={producto.id}
                 id={producto.id_producto}
                 name={producto.name}
                 price={producto.price}
