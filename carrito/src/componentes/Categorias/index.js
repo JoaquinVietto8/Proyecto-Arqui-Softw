@@ -22,7 +22,7 @@ export const Categorias = () => {
           {
             categorias.map(categoria => (
               <ObjectCategorias key={categoria.id}
-                id={categoria.id_categoria}
+                id={categoria.id_category}
                 name={categoria.name}
                 icon={categoria.icon}
                 cantidad={categoria.cantidad}

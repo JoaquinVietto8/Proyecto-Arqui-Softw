@@ -72,18 +72,29 @@
 }
 
 .usuario-opciones {
-    margin: 0 auto;
     text-decoration: none;
     cursor: pointer;
-}
-
-.div-usuario {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2px 15px;
     border: 1px solid white;
+    margin-left: 40px;
+}
+
+.usuario-opciones-2 {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .usuario {
@@ -92,12 +103,8 @@
     margin-left: auto;
 }
 
-.txt-usuario {
-    margin: auto 0;
-    color: white;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 15px;
-    font-weight: bold;
+.usuario div{
+    display: flex;
 }
 
 /*////////////////////////CARRITO/////////////////////*/

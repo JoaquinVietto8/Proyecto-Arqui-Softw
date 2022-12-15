@@ -8,6 +8,7 @@ type Detail struct {
 	Nombre          string  `gorm:"type:varchar(150);not null"`
 	Id_order        int     `gorm:"type:varchar(150);not null"`
 	Id_product      int     `gorm:"type:varchar(150);not null"`
+	Picture         string  `gorm:"type:varchar(350)"`
 }
 
 type Details []Detail

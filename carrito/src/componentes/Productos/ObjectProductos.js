@@ -9,7 +9,7 @@ export const ObjectProductos = (
         id_category
     }) => {
     return (
-        <a class="producto" href={`localhost:3000/productos/${id}`}>
+        <a class="producto" href={`http://localhost:3000/producto/${id}`}>
             <div class="contender-imagen">
                 <img class="imagen" src={picture} alt={name} />
             </div>

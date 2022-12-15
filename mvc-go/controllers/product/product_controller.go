@@ -10,19 +10,34 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func GetProductById(c *gin.Context) {
+func GetProductsById(c *gin.Context) {
+
 	log.Debug("Product id to load: " + c.Param("id_product"))
-
 	id, _ := strconv.Atoi(c.Param("id_product"))
-	var productDto dto.ProductDto
 
-	productDto, err := service.ProductService.GetProductById(id)
+	var productDto dto.ProductDto
+	productDto, err := service.ProductService.GetProductsById(id)
 
 	if err != nil {
 		c.JSON(err.Status(), err)
 		return
 	}
 	c.JSON(http.StatusOK, productDto)
+}
+
+func GetProductById(c *gin.Context) {
+
+	log.Debug("Product id to load: " + c.Param("id_product"))
+	id, _ := strconv.Atoi(c.Param("id_product"))
+
+	var producstDto dto.ProductsDto
+	producstDto, err := service.ProductService.GetProductById(id)
+
+	if err != nil {
+		c.JSON(err.Status(), err)
+		return
+	}
+	c.JSON(http.StatusOK, producstDto)
 }
 
 func GetProducts(c *gin.Context) {
@@ -37,13 +52,13 @@ func GetProducts(c *gin.Context) {
 	c.JSON(http.StatusOK, productsDto)
 }
 
-func GetProductsByCategoryName(c *gin.Context) {
+func GetProductsByCategoryId(c *gin.Context) {
 
-	log.Debug("Category to load: " + c.Param("name"))
-	name := c.Param("name")
+	log.Debug("Category to load: " + c.Param("id_category"))
+	id, _ := strconv.Atoi(c.Param("id_category"))
 
 	var productsDto dto.ProductsDto
-	productsDto, err := service.ProductService.GetProductsByCategoryName(name)
+	productsDto, err := service.ProductService.GetProductsByCategoryId(id)
 
 	if err != nil {
 		c.JSON(err.Status(), err)

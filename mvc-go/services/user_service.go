@@ -1,11 +1,13 @@
 package services
 
 import (
-	"fmt"
 	userCliente "mvc-go/clients/user"
 	"mvc-go/dto"
 	"mvc-go/model"
 	e "mvc-go/utils/errors"
+
+	"github.com/golang-jwt/jwt"
+	log "github.com/sirupsen/logrus"
 )
 
 type userService struct{}
@@ -23,6 +25,8 @@ var (
 func init() {
 	UserService = &userService{}
 }
+
+var jwtKey = []byte("secret_key")
 
 func (s *userService) GetUserById(id int) (dto.UserDto, e.ApiError) {
 
@@ -57,21 +61,58 @@ func (s *userService) GetUsers() (dto.UsersDto, e.ApiError) {
 	return usersDto, nil
 }
 
-func (s *userService) LoginUser(loginDto dto.LoginDto) (dto.TokenDto, e.ApiError) { //develve (dto.TokenDto, e.ApiError)
-	var tokenDto dto.TokenDto //genera un token dto vacio
+//var jwtKey = []byte("secret_key")
 
-	user := userCliente.GetUserByUserName(loginDto)
+func (s *userService) LoginUser(loginDto dto.LoginDto) (dto.TokenDto, e.ApiError) { //develve (dto.TokenDto, e.ApiError)
+
+	/***************************  prueba 1 ///////////////////////////////////////////////////////////////////////*/
+
+	var user model.User = userCliente.GetUserByUserName(loginDto.User)
+	log.Debug(loginDto)
+
+	var tokenDto dto.TokenDto //genera un token dto vacio
 
 	if user.Id == 0 {
 		return tokenDto, e.NewBadRequestApiError("user not found")
 	}
 
-	if user.Password != loginDto.Password {
+	if loginDto.Password == user.Password {
+
+		token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+			"id_user": user.Id,
+		})
+		tokenString, _ := token.SignedString(jwtKey)
+		tokenDto.Token = tokenString
+		tokenDto.Id_user = user.Id
+
+		return tokenDto, nil
+
+	} else {
 		return tokenDto, e.NewBadRequestApiError("Bad password")
 	}
 
-	tokenDto.Token = fmt.Sprintf("%d", user.Id)
+	/*******************************  prueba 2   ***********************************************************/
+	/*
+		var user model.User = userCliente.GetUserByUserName(loginDto.User)
+		log.Debug(loginDto)
 
-	return tokenDto, nil //crear token, si no hay errores y devuelve nil porque no hay error
+		var tokenDto dto.TokenDto //genera un token dto vacio
 
+		if user.Id == 0 {
+			return tokenDto, e.NewBadRequestApiError("user not found")
+		}
+
+		token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+			"id_user": user.Id,
+		})
+		tokenString, _ := token.SignedString(jwtKey)
+		tokenDto.Token = tokenString
+		tokenDto.Id_user = user.Id
+
+		if user.Password == tokenString {
+			return tokenDto, nil
+
+		} else {
+			return tokenDto, e.NewBadRequestApiError("Bad password")
+		}  */
 }

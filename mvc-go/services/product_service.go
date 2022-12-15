@@ -1,7 +1,6 @@
 package services
 
 import (
-	categoryCliente "mvc-go/clients/category"
 	productCliente "mvc-go/clients/product"
 	"mvc-go/dto"
 	"mvc-go/model"
@@ -11,9 +10,10 @@ import (
 type productService struct{}
 
 type productServiceInterface interface {
-	GetProductById(id int) (dto.ProductDto, e.ApiError)
+	GetProductById(id int) (dto.ProductsDto, e.ApiError)
+	GetProductsById(id int) (dto.ProductDto, e.ApiError)
 	GetProducts() (dto.ProductsDto, e.ApiError)
-	GetProductsByCategoryName(name string) (dto.ProductsDto, e.ApiError)
+	GetProductsByCategoryId(id int) (dto.ProductsDto, e.ApiError)
 	GetProductsBySearch(search string) (dto.ProductsDto, e.ApiError)
 }
 
@@ -23,23 +23,6 @@ var (
 
 func init() {
 	ProductService = &productService{}
-}
-
-func (s *productService) GetProductById(id int) (dto.ProductDto, e.ApiError) {
-
-	var product model.Product = productCliente.GetProductById(id)
-	var productDto dto.ProductDto
-
-	if product.Id == 0 {
-		return productDto, e.NewBadRequestApiError("product not found")
-	}
-
-	productDto.Id_product = product.Id
-	productDto.Name = product.Name
-	productDto.Price = product.Price
-	productDto.Picture = product.Picture
-	productDto.Id_category = product.Id_category
-	return productDto, nil
 }
 
 func (s *productService) GetProducts() (dto.ProductsDto, e.ApiError) {
@@ -54,6 +37,7 @@ func (s *productService) GetProducts() (dto.ProductsDto, e.ApiError) {
 		productDto.Price = product.Price
 		productDto.Picture = product.Picture
 		productDto.Id_category = product.Id_category
+		productDto.Descripcion = product.Descripcion
 		productDto.Stock = product.Stock
 
 		productsDto = append(productsDto, productDto)
@@ -62,10 +46,9 @@ func (s *productService) GetProducts() (dto.ProductsDto, e.ApiError) {
 	return productsDto, nil
 }
 
-func (s *productService) GetProductsByCategoryName(name string) (dto.ProductsDto, e.ApiError) {
+func (s *productService) GetProductsByCategoryId(id int) (dto.ProductsDto, e.ApiError) {
 
-	var category model.Category = categoryCliente.GetCategoryIdByName(name)
-	var products model.Products = productCliente.GetProductsByCategoryId(category.Id)
+	var products model.Products = productCliente.GetProductsByCategoryId(id)
 
 	var productsDto dto.ProductsDto
 
@@ -80,6 +63,8 @@ func (s *productService) GetProductsByCategoryName(name string) (dto.ProductsDto
 		productDto.Price = product.Price
 		productDto.Picture = product.Picture
 		productDto.Id_category = product.Id_category
+		productDto.Descripcion = product.Descripcion
+		productDto.Stock = product.Stock
 
 		productsDto = append(productsDto, productDto)
 	}
@@ -103,10 +88,55 @@ func (s *productService) GetProductsBySearch(search string) (dto.ProductsDto, e.
 		productDto.Name = product.Name
 		productDto.Price = product.Price
 		productDto.Picture = product.Picture
+		productDto.Descripcion = product.Descripcion
 		productDto.Id_category = product.Id_category
 
 		productsDto = append(productsDto, productDto)
 	}
 
 	return productsDto, nil
+}
+
+func (s *productService) GetProductById(id int) (dto.ProductsDto, e.ApiError) {
+
+	var product model.Product = productCliente.GetProductById(id)
+	var productDto dto.ProductDto
+
+	var productsDto dto.ProductsDto
+
+	if product.Id == 0 {
+		return productsDto, e.NewBadRequestApiError("product not found")
+	}
+
+	productDto.Id_product = product.Id
+	productDto.Name = product.Name
+	productDto.Price = product.Price
+	productDto.Picture = product.Picture
+	productDto.Id_category = product.Id_category
+	productDto.Descripcion = product.Descripcion
+	productDto.Stock = product.Stock
+
+	productsDto = append(productsDto, productDto)
+
+	return productsDto, nil
+}
+
+func (s *productService) GetProductsById(id int) (dto.ProductDto, e.ApiError) {
+
+	var product model.Product = productCliente.GetProductById(id)
+	var productDto dto.ProductDto
+
+	if product.Id == 0 {
+		return productDto, e.NewBadRequestApiError("product not found")
+	}
+
+	productDto.Id_product = product.Id
+	productDto.Name = product.Name
+	productDto.Price = product.Price
+	productDto.Picture = product.Picture
+	productDto.Id_category = product.Id_category
+	productDto.Descripcion = product.Descripcion
+	productDto.Stock = product.Stock
+
+	return productDto, nil
 }

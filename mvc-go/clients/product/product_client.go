@@ -52,23 +52,18 @@ func GetProducts() model.Products {
 	var products model.Products
 	Db.Find(&products)
 
-	log.Debug("Products: ", products)
-
 	return products
 }
 
 func GetProductsByCategoryId(id int) model.Products {
 	var products model.Products
 	Db.Where("id_category = ?", id).Find(&products)
-	log.Debug("Products: ", products)
-
 	return products
 }
 
 func GetProductsBySearch(text string) model.Products {
 	var products model.Products
 	Db.Where("name LIKE ?", "%"+text+"%").Find(&products)
-	log.Debug("Products: ", products)
 
 	return products
 }

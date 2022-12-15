@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Tiveo from "../../images/tiveo.png";
+import { getUserCookies, logOutCookies } from "../../Cookies";
 import './header.css';
 
-function BuscarTxt(){
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  BuscarTxt();
+};
+
+function BuscarTxt() {
   var txt = document.getElementById('input-buscar').value;
-  window.location.href = window.location.protocol + "//localhost:3000/search-producto/"+txt;
+  if (txt != "") {
+    window.location.href = window.location.protocol + "//localhost:3000/search-producto/" + txt;
+  }
 }
 
+function Carrito() {
+  window.location.href = window.location.protocol + "//localhost:3000/carrito";
+}
+
+function Login() {
+  window.location.href = window.location.protocol + "//localhost:3000/login";
+}
+
+
+
 export const Header = () => {
+  const [UserToken, setUserToken] = useState("")
+
+  if (UserToken == "") {
+    setUserToken(getUserCookies())
+  }
   return (
     <header class="header">
       <div class="color-1">
@@ -20,18 +44,20 @@ export const Header = () => {
           </div>
 
           <section class="contenedor-search">
-            <div class="div-search">
+            <form class="div-search" onSubmit={handleSubmit}>
               <input class="input-search" id="input-buscar" type="text" placeholder="Busca lo que quieras..." />
-              <button href="" type="submit" on onClick={() => BuscarTxt()} class="boton-search"><svg xmlns="http://www.w3.org/2000/svg" fill="grey" viewBox="0 0 30 30" width="25px" height="25px">
+              <button href="" type="submit" class="boton-search"><svg xmlns="http://www.w3.org/2000/svg" fill="grey" viewBox="0 0 30 30" width="25px" height="25px">
                 <path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z" />
               </svg></button>
-            </div>
+            </form>
           </section>
 
-          <div className='cart'>
-            <box-icon name="cart"></box-icon>
-            <span className='item_total'>0</span>
-          </div>
+          {UserToken != undefined ?
+            <div className='cart' on onClick={Carrito}> <box-icon name="cart"></box-icon >
+            </div>
+            :
+            <div className='cart' on onClick={Login}><box-icon name="cart"></box-icon>
+            </div>}
 
         </div>
       </div>
@@ -47,14 +73,21 @@ export const Header = () => {
             </a>
           </div>
           <div class="usuario">
-            <a class="usuario-opciones" href='http://localhost:3000/login'>
-              <div class="div-usuario">
-                <p class="txt-usuario">Iniciar Sesion</p>
+            {UserToken != undefined ?
+              <div>
+                <a href="http://localhost:3000/compras" class="usuario-opciones-2" >Mis compras</a>
+                <a href='#' class="usuario-opciones" onClick={() => { logOutCookies(); window.location.replace("/login") }}>Salir</a>
               </div>
-            </a>
+              :
+              <a href="http://localhost:3000/login" class="usuario-opciones" > Iniciar Sesion </a>
+            }
           </div>
         </div>
       </div>
     </header >
   )
 }
+
+
+
+

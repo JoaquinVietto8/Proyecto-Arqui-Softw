@@ -1,0 +1,142 @@
+.div-producto-2 {
+    width: 1000px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 8px;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.div-nombre-2 {
+    margin-top: 25px;
+    height: 40px;
+    color: black;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.txt-nombre-2 {
+    margin-bottom: 3px;
+    margin-top: 0;
+}
+
+
+.div-producto-3 {
+    border-radius: 5px;
+    background-color: white;
+    margin: 40px 30px;
+    margin-top: 50px;
+    text-decoration: none;
+    display: flex;
+}
+
+.descripcion{
+    font-size: 19px;
+    margin-top: 25px;
+    color: rgb(92, 91, 91);
+    max-width: 610px;
+    display: block;
+    display: -webkit-box;
+    line-height: 1.15;
+    -webkit-line-clamp: 13;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 288px;
+}
+
+.contender-imagen-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: auto 20px auto 10px;
+}
+
+.imagen-2 {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.precio-2 {
+    font-size: 28px;
+    color: #121738;
+    font-weight: bold;
+    margin: 0;
+}
+
+.stock-2{
+    font-size: 16px;
+    color: black;
+    margin: 0;
+}
+
+.div-precio-2 {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.confirmar-2{
+    background-color: #fdd662;
+    color: black;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 270px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.confirmar-2:hover {
+    transition: 0.3s;
+    background-color: #f9c52b;
+}
+
+.no-disponible{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#cantidad::-webkit-outer-spin-button,
+#cantidad::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#cantidad{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-left: 10px;
+}
+
+.div-cantidad-2{
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.div-carrito-2{
+    margin: 0 auto;
+}

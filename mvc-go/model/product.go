@@ -7,6 +7,7 @@ type Product struct {
 	Price       float32 `gorm:"type:varchar(150);not null"`
 	Stock       int     `gorm:"type:varchar(150)"`
 	Id_category int     `gorm:"type:varchar(150)"`
+	Descripcion string  `gorm:"type:varchar(800)"`
 }
 
 type Products []Product

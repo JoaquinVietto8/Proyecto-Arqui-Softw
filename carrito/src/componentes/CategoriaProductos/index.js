@@ -4,7 +4,8 @@ import './categoria-productos.css';
 import '../index.css';
 
 var pathname = window.location.pathname.split("/");
-let categoria = pathname[pathname.length - 1]
+let categoria = pathname[pathname.length - 2]
+let nombre = pathname[pathname.length - 1]
 
 export const CategoriaProductos = () => {
 
@@ -21,8 +22,8 @@ export const CategoriaProductos = () => {
   return (
     <>
       <main>
-        <div class="contenedor-productos">
-        <h1 class="title-categoria-producto">{categoria}</h1>
+        <div class="contenedor-productos-cat">
+        <h1 class="title-categorias-buscar"> {nombre}</h1>
           {
             productos.map(producto => (
               <ObjectCategoriaProductos key={producto.id}

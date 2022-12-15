@@ -1,0 +1,70 @@
+.title-compras {
+    font-size: 40px;
+    color: #121738;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 800px;
+}
+
+.div-compra{
+        width: 800px;
+        border-radius: 5px;
+        background-color: white;
+        margin-top: 0;
+        text-decoration: none;
+        padding: 20px;
+        margin-bottom: 40px;
+}
+
+.div-compra p:first-child{
+    margin: 0;
+    font-size: 20px;
+}
+
+.div-compra a{
+    cursor: pointer;
+    color: #121738;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.imagen-compra {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.padre-details{
+    margin-top: 30px;
+    display: flex;
+}
+
+.hijo-details{
+    margin-top: 40px;
+    margin-left: 90px;
+}
+
+.a{
+    text-align: right;
+    color: #ffd146;
+    margin-right: 20px;
+}
+
+.div-compras-vacio{
+    display: flex;
+    margin-top: 70px;
+    width: 800px;
+    justify-content: center;
+    text-align: center;
+}
+
+.txt-compras-vacio{
+    font-size: 24px;
+}
+
+.swal2-styled.swal2-confirm.boton-ok{
+    background-color: #ffd146;
+    font-family: 'Noto Sans JP', sans-serif;
+    box-shadow: none !important;
+    transition: 0.3s;
+}

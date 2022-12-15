@@ -8,6 +8,7 @@ type DetailDto struct {
 	Nombre          string  `json:"nombre"`
 	Id_order        int     `json:"id_order"`
 	Id_product      int     `json:"id_product"`
+	Picture         string  `json:"picture_url"`
 }
 
 type DetailsDto []DetailDto

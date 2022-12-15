@@ -10,10 +10,8 @@ function BotonOut(object) {
 }
 
 function Redirigir(object){
-    window.location.href = window.location.protocol + "//localhost:3000/categorias/"+object.name;
+    window.location.href = window.location.protocol + "//localhost:3000/categorias/"+object.id+"/"+object.name;
 }
-
-
 
 
 export const ObjectCategorias = (
@@ -23,10 +21,10 @@ export const ObjectCategorias = (
         cantidad,
     }) => {
     return (
-        <div onClick={() => Redirigir({name})} class="boton-categoria">
+        <div onClick={() => Redirigir({id, name})} class="boton-categoria">
             <div  class="contenido-boton" id={name} onMouseOver={() => BotonIn({name})} onMouseOut={() => BotonOut({name})}>
                 <div class="div-icon">
-                    <img class="icono-categoria" src={icon} />
+                    <img class="icono-categoria" src={name} />
                 </div>
                 
                 <div class="div-info">

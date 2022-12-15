@@ -1,7 +1,6 @@
 package product
 
 import (
-	"mvc-go/dto"
 	"mvc-go/model"
 
 	"github.com/jinzhu/gorm"
@@ -30,9 +29,10 @@ func GetUsers() model.Users {
 
 /////////////////////////LOGIN///////////////////////////////
 
-func GetUserByUserName(loginDto dto.LoginDto) model.User {
+func GetUserByUserName(UserName string) model.User {
 	var user model.User
-	Db.Where("user_name = ?", loginDto.UserName).First(&user)
+
+	Db.Where("user_name = ?", UserName).First(&user)
 	log.Debug("User: ", user)
 
 	return user

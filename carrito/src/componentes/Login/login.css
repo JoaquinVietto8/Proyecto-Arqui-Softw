@@ -30,8 +30,8 @@
 }
 
 .div-confirmar {
-    display: flex;
     margin-top: 40px;
+    text-align: center;
 }
 
 .confirmar {
@@ -53,5 +53,13 @@
 .confirmar:hover {
     transition: 0.3s;
     background-color: #f0b60a;
+}
+
+#incorrecto{
+    margin: 0;
+    margin-top: 15px;
+    font-size: 12px;
+    color: red;
+    visibility: hidden;
 }
 

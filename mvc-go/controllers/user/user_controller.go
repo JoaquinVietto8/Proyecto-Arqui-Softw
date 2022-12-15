@@ -51,7 +51,8 @@ func Login(c *gin.Context) {
 	tokenDto, er := service.UserService.LoginUser(loginDto)
 
 	if er != nil {
-		panic("")
+		c.JSON(er.Status(), er)
+		return
 	}
 
 	c.JSON(http.StatusAccepted, tokenDto)

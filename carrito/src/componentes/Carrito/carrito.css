@@ -1,0 +1,131 @@
+.div-carrito{
+    width: 800px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 0;
+    text-decoration: none;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.div-carrito p:first-child{
+    margin: 0;
+    font-size: 20px;
+}
+
+.div-carrito a{
+    cursor: pointer;
+    color: #121738;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.imagen-carrito {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.padre-details-carrito{
+    margin-top: 30px;
+    display: flex;
+}
+
+.hijo-details-carrito{
+    margin-top: 40px;
+    margin-left: 90px;
+}
+
+.title-carrito{
+    font-size: 40px;
+    color: #121738;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 800px;
+}
+
+.remover-div{
+    display: flex;
+    text-align: right;
+    align-items: center;
+ 
+}
+
+.remover-txt{
+    font-size: 15px;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.remover-input{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #c7c7c7;
+    border-radius: 5px;
+}
+
+.remover{
+    background-color: #facc41;
+    margin-right: auto;
+    margin-left: 5px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+.remover:hover {
+    transition: 0.3s;
+    background-color: #f0b60a;
+}
+
+.div-pago{
+    margin-top: 40px;
+    width: 400px;
+    justify-content: center;
+    text-align: center;
+}
+
+.confirmar-compra {
+    background-color: #facc41;
+    color: black;
+    border-radius: 5px;
+    display: block;
+    font-size: 17px;
+    width: 240px;
+    height: 37px;
+    font-family: 'Noto Sans JP', sans-serif;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    margin: 0 auto;
+}
+
+.confirmar-compra:hover {
+    transition: 0.3s;
+    background-color: #f0b60a;
+}
+
+.total-pagar{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.div-carrito-vacio{
+    display: flex;
+    margin-top: 70px;
+    width: 800px;
+    justify-content: center;
+    text-align: center;
+}
+
+.txt-carrito-vacio{
+    font-size: 24px;
+}
+
